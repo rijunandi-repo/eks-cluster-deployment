@@ -9,12 +9,12 @@ pipeline {
         )
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/rijunandi-repo/eks-cluster-deployment.git'
-            }
-        }
+  stage('Checkout') {
+    steps {
+        git branch: 'main',
+            url: 'https://github.com/rijunandi-repo/eks-cluster-deployment.git'
+    }
+}
     
         stage ("terraform init") {
             steps {
